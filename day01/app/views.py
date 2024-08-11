@@ -11,7 +11,7 @@ def Categoryview(request):
     filter = CategoryFilter (request.GET, queryset=Category.objects.all())
     Categories = filter.qs
     paginator = Paginator(Categories, 3)
-    page = paginator.get _page(page_number)
+    page = paginator.get_page(page_number)
 
     if request.method == 'POST':
         form = CategoryForm(request.POST)
